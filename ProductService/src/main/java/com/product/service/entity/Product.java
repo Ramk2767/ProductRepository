@@ -2,9 +2,12 @@ package com.product.service.entity;
 
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "products")
+@AllArgsConstructor
 public class Product {
 
     @Id
@@ -19,23 +22,13 @@ public class Product {
     @Column(nullable = false)
     private Double price;
 
-    private Integer quantity;
 
     private String category;
 
     public Product() {
     }
 
-    public Product(Long id, String name, String description,
-                   Double price, Integer quantity, String category) {
 
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.price = price;
-        this.quantity = quantity;
-        this.category = category;
-    }
 
     public Long getId() {
         return id;
@@ -69,13 +62,6 @@ public class Product {
         this.price = price;
     }
 
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
 
     public String getCategory() {
         return category;
